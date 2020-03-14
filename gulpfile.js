@@ -7,7 +7,7 @@ var minifyCss = require('gulp-clean-css');
 gulp.task('css', function(done) {
     gulp.src('./src/fullpage.css')
         .pipe(sourcemaps.init())
-        .pipe(gulp.dest('./assets/css'))
+        .pipe(gulp.dest('./public/assets/css'))
         .pipe(minifyCss({
             compatibility: 'ie8',
             advanced: false,
@@ -15,7 +15,7 @@ gulp.task('css', function(done) {
         }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./assets/css'));
+        .pipe(gulp.dest('./public/assets/css'));
     done();
 });
 
